@@ -74,7 +74,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 md:left-[-1rem] lg:left-[-2rem] md:translate-x-0 bg-white/95 backdrop-blur-sm p-4 md:p-5 rounded-2xl shadow-xl border border-white/50 flex items-center gap-4 w-[90%] max-w-[280px] md:w-auto md:max-w-xs z-20"
+              className="absolute bottom-6 left-1 -translate-x-1/2 md:left-[-1rem] lg:left-[-2rem] md:translate-x-0 bg-white/95 backdrop-blur-sm p-4 md:p-5 rounded-2xl shadow-xl border border-white/50 flex items-center justify-center md:justify-start gap-4 w-auto max-w-[90%] md:max-w-xs z-20"
             >
               <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
