@@ -15,9 +15,10 @@ const About = () => {
             className="relative order-2 md:order-1 px-4 md:px-0"
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              {/* ALT TEXT OTIMIZADO PARA SEO */}
               <img 
                 src="/img/img1.jpeg" 
-                alt="Camila Conceição" 
+                alt="Camila Conceição - Psicóloga especialista em Terapia de Aceitação e Compromisso (ACT)" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
@@ -41,11 +42,15 @@ const About = () => {
               <p>
                 Me chamo <span className="font-bold text-secondary">Camila Conceição Costa</span>, sou psicóloga e especialista em Saúde Mental, Psiquiatria, Stress e Dependência Química.
               </p>
+              
+              {/* Parágrafo de Conexão */}
               <p>
-                Sou apaixonada por pessoas e suas singularidades. A psicologia me ajudou no processo de autoconhecimento e consequentemente tornou minha vida mais leve.
+                Sou apaixonada por pessoas e suas singularidades. A psicologia me ajudou no meu próprio processo de autoconhecimento e, através da ciência, encontrei ferramentas reais para tornar a vida mais leve.
               </p>
+              
+              {/* AQUI ENTRA A ACT COM FORÇA */}
               <p>
-                O meu compromisso social na psicologia é promover uma escuta acolhedora, um espaço de liberdade, de compreensão, livre de julgamentos e com o objetivo de te ajudar a lidar melhor com as suas emoções, ansiedades e com o que lhe parecer desafiador.
+                Minha atuação é pautada na <strong className="text-secondary font-medium">Terapia de Aceitação e Compromisso (ACT)</strong>. Meu objetivo é oferecer um espaço seguro onde você não precise lutar contra o que sente, mas sim aprender a caminhar em direção ao que realmente importa para você, construindo uma vida com mais sentido e propósito.
               </p>
               
               <blockquote className="border-l-4 border-primary pl-6 italic text-secondary font-medium my-8 text-left mx-4 md:mx-0">
@@ -53,7 +58,7 @@ const About = () => {
               </blockquote>
               
               <div className="pt-4 flex justify-center md:justify-start">
-                <img src="/img/logo.jpeg" alt="Assinatura" className="h-16 opacity-80 grayscale hover:grayscale-0 transition-all" />
+                <img src="/img/logo.jpeg" alt="Logotipo Camila Conceição Psicologia" className="h-16 opacity-80 grayscale hover:grayscale-0 transition-all" />
               </div>
             </div>
           </motion.div>

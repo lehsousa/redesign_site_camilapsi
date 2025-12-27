@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Container from './Container';
-import Button from './Button';
+import Button from './Button'; // Mantemos para o botão "Saiba Mais"
 
 const Hero = () => {
+  // Configuração do WhatsApp Turbinado (Mesma lógica do Header)
+  const message = "Olá! Acessei o site e gostaria de agendar uma sessão.";
+  const phoneNumber = "5511958131645";
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden bg-gradient-to-br from-surface to-white">
       {/* Background Decorative Elements */}
@@ -18,39 +23,40 @@ const Hero = () => {
           className="text-center lg:text-left"
         >
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6 tracking-wide">
-            Psicologia Baseada em Evidências
+            Terapia de Aceitação e Compromisso (ACT)
           </span>
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif italic text-primary drop-shadow-sm leading-[1.1] mb-6 tracking-tight">
-            Tenha uma vida mais <span className="relative inline-block">
-              equilibrada
+            Psicóloga Especialista em <span className="relative inline-block">
+              ACT
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
               </svg>
-            </span> e com saúde mental
+            </span>
           </h1>
+          
           <p className="text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-            A terapia vai te ajudar a se conectar com você mesmo, a se amar e viver com mais leveza. 
-            Atendimento online especializado para o seu bem-estar.
+            Pare de lutar contra o que você sente e comece a construir a vida que deseja.
+            Atendimento online focado em flexibilidade psicológica e valores.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button variant="primary" className="px-8 py-4 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1 w-full sm:w-auto" onClick={() => window.open('https://forms.gle/q21UQB7dF5dYxUZv6', '_blank')}>
+            {/* BOTÃO PRINCIPAL AGORA É UM LINK DIRETO (Performance Máxima) */}
+            <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-primary rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1 w-full sm:w-auto cursor-pointer"
+            >
               Agendar Consulta
-            </Button>
+            </a>
+
+            {/* Mantivemos o Saiba Mais como botão de scroll */}
             <Button variant="outline" className="px-8 py-4 text-lg border-2 hover:bg-surface w-full sm:w-auto" onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>
               Saiba Mais
             </Button>
           </div>
           
-          <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm text-muted">
-            <div className="flex -space-x-2">
-              {[1,2,3].map(i => (
-                <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-500">
-                  {i}
-                </div>
-              ))}
-            </div>
-            <p>Junte-se a dezenas de pacientes satisfeitos</p>
-          </div>
         </motion.div>
 
         <motion.div 
@@ -64,7 +70,7 @@ const Hero = () => {
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] lg:aspect-auto lg:h-full w-full">
               <img 
                 src="/img/camila.jpeg" 
-                alt="Camila Conceição Psicóloga" 
+                alt="Psicóloga Camila Conceição, especialista em Terapia de Aceitação e Compromisso (ACT) atendendo online" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -82,7 +88,7 @@ const Hero = () => {
               <div>
                 <p className="text-[10px] md:text-xs font-semibold text-primary uppercase tracking-wider">CRP 06/166430</p>
                 <p className="font-bold text-secondary text-sm md:text-lg leading-tight">Camila Conceição</p>
-                <p className="text-[10px] md:text-xs text-muted">Psicóloga Clínica</p>
+                <p className="text-[10px] md:text-xs text-muted">Psicóloga Clínica - ACT</p>
               </div>
             </motion.div>
           </div>

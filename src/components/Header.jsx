@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Container from './Container';
-import Button from './Button';
+// Importamos o Button, mas vamos usar tags <a> estilizadas para ser mais rápido
+import Button from './Button'; 
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,8 +20,14 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Sobre', href: '#about' },
     { name: 'Especialidades', href: '#services' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Contato', href: '#contact' },
   ];
+
+  // URL Direta da API (Mais rápida que wa.me no desktop)
+  const message = "Olá! Acessei o site e gostaria de agendar uma sessão.";
+  const phoneNumber = "5511958131645";
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
   return (
     <header 
@@ -29,7 +36,7 @@ const Header = () => {
       }`}
     >
       <Container className="flex items-center justify-between relative">
-        {/* Mobile Menu Button - Left on Mobile */}
+        {/* Mobile Menu Button */}
         <button 
           className="md:hidden p-2 text-secondary hover:text-primary transition-colors absolute left-4"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -38,9 +45,9 @@ const Header = () => {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Logo - Centered on Mobile, Left on Desktop */}
+        {/* Logo */}
         <a href="#" className="flex items-center gap-3 group mx-auto md:mx-0">
-          <img src="/img/logo horizontal.png" alt="Camila Conceição" className="h-10 w-auto md:h-12 object-contain group-hover:opacity-90 transition-opacity" />
+          <img src="/img/logo horizontal.png" alt="Camila Conceição Psicóloga" className="h-10 w-auto md:h-12 object-contain group-hover:opacity-90 transition-opacity" />
         </a>
 
         {/* Desktop Navigation */}
@@ -54,12 +61,19 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="primary" className="rounded-full px-6" onClick={() => window.open('https://forms.gle/q21UQB7dF5dYxUZv6', '_blank')}>
+          
+          {/* BOTÃO TURBINADO (Link direto <a>) */}
+          {/* Usamos as mesmas classes visuais do Button, mas é um link nativo */}
+          <a 
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-primary text-white font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
+          >
             Agendar
-          </Button>
+          </a>
         </nav>
 
-        {/* Placeholder for right side on mobile to balance the menu button if needed, or just keep logo centered */}
         <div className="w-10 md:hidden"></div> 
       </Container>
 
@@ -76,9 +90,16 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="primary" className="w-full rounded-full mt-4 py-3" onClick={() => window.open('https://forms.gle/q21UQB7dF5dYxUZv6', '_blank')}>
+          
+          {/* Botão Mobile Turbinado */}
+          <a 
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full text-center rounded-full mt-4 py-3 bg-primary text-white font-medium shadow-md active:scale-95 transition-all"
+          >
             Agendar Sessão
-          </Button>
+          </a>
         </div>
       )}
     </header>
