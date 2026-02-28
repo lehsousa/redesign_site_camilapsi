@@ -1,70 +1,60 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import Container from './Container';
-import Section from './Section';
 
 const About = () => {
   return (
-    <Section id="about" className="bg-white py-16 md:py-32">
-      <Container>
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative order-2 md:order-1 px-4 md:px-0"
-          >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              {/* ALT TEXT OTIMIZADO PARA SEO */}
+    <section id="about" className="py-24 bg-[#F9F9F9] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+          {/* Lado Esquerdo: Imagem com moldura minimalista */}
+          <div className="lg:col-span-5 relative">
+            <div className="aspect-[4/5] overflow-hidden rounded-sm grayscale-[30%] hover:grayscale-0 transition-all duration-700">
               <img 
                 src="/img/img1.jpeg" 
-                alt="Camila Conceição - Psicóloga especialista em Terapia de Aceitação e Compromisso (ACT)" 
-                className="w-full h-full object-cover"
+                alt="Camila Conceição - Estrategista em Comportamento"
+                className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
             </div>
-            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-32 h-32 md:w-40 md:h-40 bg-primary/10 rounded-full -z-10 blur-3xl" />
-            <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-32 h-32 md:w-40 md:h-40 bg-accent/20 rounded-full -z-10 blur-3xl" />
-          </motion.div>
+            {/* Elemento de design Luana Carolina: Detalhe sutil */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white -z-10 shadow-sm hidden lg:block"></div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="order-1 md:order-2 text-center md:text-left"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold font-serif italic text-primary drop-shadow-sm mb-6 relative inline-block">
-              Sobre Mim
-              <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-primary rounded-full" />
+          {/* Lado Direito: Copy de Autoridade (Clara do Vale) */}
+          <div className="lg:col-span-7">
+            <h2 className="text-[10px] tracking-[0.3em] uppercase text-gray-400 font-bold mb-4">
+              Trajetória & Estratégia
             </h2>
+
             
-            <div className="space-y-6 text-lg text-muted leading-relaxed">
+            <div className="space-y-6 text-gray-600 leading-relaxed text-base md:text-lg font-light">
               <p>
-                Me chamo <span className="font-bold text-secondary">Camila Conceição Costa</span>, sou psicóloga e especialista em Saúde Mental, Psiquiatria, Stress e Dependência Química.
+                Minha trajetória é <span className="font-bold text-gray-900">sustentada</span> pela prática clínica e pelo compromisso em compreender, com profundidade, os processos que organizam a experiência emocional e o comportamento humano. Ao longo dos anos, acompanho pessoas no desenvolvimento de maior clareza emocional e flexibilidade psicológica, que é o foco principal da abordagem que norteia o meu trabalho; a <span className="font-bold text-gray-900">ACT (Terapia de Aceitação e Compromisso)</span>.
               </p>
-              
-              {/* Parágrafo de Conexão */}
+
               <p>
-                Sou apaixonada por pessoas e suas singularidades. A psicologia me ajudou no meu próprio processo de autoconhecimento e, através da ciência, encontrei ferramentas reais para tornar a vida mais leve.
+                Ao aliar essa bagagem clínica à gestão de pessoas, construí um repertório corporativo voltado para a alta liderança. Atuo na intersecção entre resultados estratégicos e mitigação de impactos emocionais, implementando programas de saúde mental e gestão de riscos psicossociais <span className="font-bold text-gray-900">(NR-01)</span>.
               </p>
-              
-              {/* AQUI ENTRA A ACT COM FORÇA */}
+
               <p>
-                Minha atuação é pautada na <strong className="text-secondary font-medium">Terapia de Aceitação e Compromisso (ACT)</strong>. Meu objetivo é oferecer um espaço seguro onde você não precise lutar contra o que sente, mas sim aprender a caminhar em direção ao que realmente importa para você, construindo uma vida com mais sentido e propósito.
+                Essa integração entre clínica e universo corporativo permite um trabalho profundo e aplicável, voltado à construção de uma base emocional sólida, para que você possa viver, decidir e se posicionar com mais segurança, equilíbrio e consistência em todas as áreas da sua vida.
               </p>
-              
-              <blockquote className="border-l-4 border-primary pl-6 italic text-secondary font-medium my-8 text-left mx-4 md:mx-0">
-                "Quem olha para fora sonha, quem olha para dentro desperta"
-              </blockquote>
-              
-              <div className="pt-4 flex justify-center md:justify-start">
-                <img src="/img/logo.jpeg" alt="Logotipo Camila Conceição Psicologia" className="h-16 opacity-80 grayscale hover:grayscale-0 transition-all" />
-              </div>
+
+              <p className="pt-6 pb-2 text-xl font-serif italic text-gray-800 border-l-2 border-primary pl-6 mt-8">
+                "Saúde emocional é o que <span className="font-bold">sustenta</span> clareza, direção e uma vida com sentido."
+              </p>
             </div>
-          </motion.div>
+
+            {/* Assinatura / Call to Action sutil */}
+            <div className="mt-16 pt-8 border-t border-gray-200">
+              <span className="block text-[10px] md:text-[11px] tracking-[0.4em] uppercase font-bold text-gray-400">
+                Pelo desenvolvimento de mentes de alto valor
+              </span>
+            </div>
+          </div>
+
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 };
 
