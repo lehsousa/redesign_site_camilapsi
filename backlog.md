@@ -25,8 +25,8 @@
 
 ## 🔴 P1 — Alta Prioridade
 
-- [ ] **Validar deploy na hospedagem** — Confirmar que os arquivos do `dist/` foram carregados e o site está funcional na URL de produção
-- [ ] **Testar formulário em produção** — Enviar aplicação real e verificar recebimento no `contato@camilaconceicaopsi.com.br`
+- [x] **Validar deploy na hospedagem** — Site online e funcional em produção ✅ (2026-02-28)
+- [x] **Testar formulário em produção** — Formspree funcionando, email chegando em `contato@camilaconceicaopsi.com.br` ✅ (2026-02-28)
 - [ ] **Responsividade mobile** — Revisão detalhada em smartphones reais (iOS e Android)
 
 ---
