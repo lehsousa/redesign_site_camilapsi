@@ -70,9 +70,13 @@ const Hero = () => {
 
             <div className="w-full h-full overflow-hidden rounded-sm bg-gray-200">
               <img 
-                src="/img/camila.jpeg" 
-                alt="Camila Conceição - Especialista em Regulação Emocional e Estratégia"
+                src="/img/camila.webp"
+                alt="Camila Conceição - Especialista em ACT e Psicologia Clínica Estratégica"
                 className="w-full h-full object-cover grayscale-[40%] hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100 origin-center"
+                width="900"
+                height="1125"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
             

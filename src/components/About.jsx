@@ -10,9 +10,13 @@ const About = () => {
           <div className="lg:col-span-5 relative">
             <div className="aspect-[4/5] overflow-hidden rounded-sm grayscale-[30%] hover:grayscale-0 transition-all duration-700">
               <img 
-                src="/img/img1.jpeg" 
-                alt="Camila Conceição - Estrategista em Comportamento"
+                src="/img/img1.webp"
+                alt="Camila Conceição - Especialista em ACT e Psicologia Clínica"
                 className="object-cover w-full h-full"
+                width="900"
+                height="1125"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             {/* Elemento de design Luana Carolina: Detalhe sutil */}

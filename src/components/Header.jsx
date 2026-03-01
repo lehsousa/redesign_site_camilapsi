@@ -54,7 +54,7 @@ const Header = () => {
 
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group mx-auto md:mx-0 z-50">
-          <img src="/img/logo horizontal.png" alt="Camila Conceição Psicóloga" className="h-8 md:h-10 object-contain group-hover:opacity-80 transition-opacity" />
+          <img src="/img/logo-horizontal.webp" alt="Camila Conceição Psicóloga" className="h-8 md:h-10 object-contain group-hover:opacity-80 transition-opacity" width="400" height="133" fetchpriority="high" />
         </a>
 
         {/* Desktop Navigation */}
@@ -87,7 +87,7 @@ const Header = () => {
 
           {/* Header do Menu Mobile */}
           <div className="flex justify-between items-center mb-16">
-            <img src="/img/logo horizontal.png" alt="Camila Conceição" className="h-8 w-auto object-contain" />
+            <img src="/img/logo-horizontal.webp" alt="Camila Conceição" className="h-8 w-auto object-contain" width="400" height="133" />
             <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 p-2 -mr-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors">
               <X size={20} strokeWidth={1.5} />
             </button>
