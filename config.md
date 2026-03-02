@@ -57,19 +57,21 @@ src/
 │   └── Services.jsx
 ```
 
-## Ponto de Retomada — 2026-02-28
+## Ponto de Retomada — 2026-03-01
 
-**Última sessão concluída:** Manutenção de links + evolução do ApplicationForm + build + deploy
+**Última sessão concluída:** SEO completo + Performance + CDN Cloudflare
 
 **Estado atual:**
-- ✅ Todos os links do menu funcionando corretamente
-- ✅ Formspree integrado e testado (endpoint `xeeldwgz`)
-- ✅ Estado de confirmação pós-envio do form implementado
-- ✅ Campo de preferência de retorno (Email/WhatsApp) implementado
-- ✅ Build gerado e publicado no GitHub (dist/ versionado)
-- ⏳ Pendente: validar o deploy na hospedagem após upload do dist/
+- ✅ SEO premium: Title, Description, OG Tags, Twitter/X Cards, canonical, robots
+- ✅ Favicon gerado da logo da Camila (.ico + 512px)
+- ✅ OG image (versão clara 1200×630) publicada
+- ✅ sitemap.xml criado e processado pelo Google Search Console (6 páginas)
+- ✅ Todas as imagens convertidas para WebP (economia de até 99%)
+- ✅ PageSpeed mobile: **89** | SEO: **100** | Melhores Práticas: **100**
+- ✅ Cloudflare configurado — nameservers `jill.ns.cloudflare.com` / `rex.ns.cloudflare.com`
+- ⏳ Propagação DNS do Cloudflare em andamento (1–24h) — score deve subir para 90+ após propagar
 
-**Próxima prioridade:** Ver backlog.md — P1
+**Próxima prioridade:** Ver backlog.md — verificar score após CDN propagar + P2 restantes
 
 ## Notas de Segurança
 

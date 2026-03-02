@@ -124,8 +124,8 @@ const Header = () => {
               <p className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">CRP 06/166430</p>
             </div>
             <div className="flex space-x-5">
-              <a href="https://www.instagram.com/camilaconceicaopsi_/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 transition-colors"><Instagram size={20} strokeWidth={1.5} /></a>
-              <a href="https://www.linkedin.com/in/camila-concei%C3%A7%C3%A3o-costa/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 transition-colors"><Linkedin size={20} strokeWidth={1.5} /></a>
+              <a href="https://www.instagram.com/camilaconceicaopsi_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Camila Conceição" className="text-gray-400 hover:text-gray-900 transition-colors"><Instagram size={20} strokeWidth={1.5} /></a>
+              <a href="https://www.linkedin.com/in/camila-concei%C3%A7%C3%A3o-costa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Camila Conceição" className="text-gray-400 hover:text-gray-900 transition-colors"><Linkedin size={20} strokeWidth={1.5} /></a>
             </div>
           </div>
         </div>

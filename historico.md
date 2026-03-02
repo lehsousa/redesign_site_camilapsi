@@ -2,6 +2,71 @@
 
 ---
 
+## 📅 2026-03-01 — SEO Completo, Performance e CDN Cloudflare
+
+### Ações Realizadas
+
+**1. SEO e Metatags — Reposicionamento para Especialista em ACT**
+- Reescrito `index.html` completo com novo posicionamento
+- `<title>` atualizado: *"Camila Conceição | Especialista em ACT & Psicologia Clínica Estratégica"*
+- `<meta description>` atualizado com palavras-chave: ACT, Psicologia Clínica Estratégica, Saúde Mental Corporativa, NR-01
+- Adicionadas `<meta keywords>`, `<meta robots>`, `<link rel="canonical">`
+- Implementadas **Open Graph tags** completas (og:title, og:description, og:image 1200×630, og:url, og:site_name, og:locale)
+- Implementadas **Twitter/X Card tags** (summary_large_image)
+- Idioma do HTML alterado de `en` para `pt-BR`
+
+**2. Favicon e OG Image**
+- Removida referência ao `vite.svg` — favicon consolidado em `/favicon.ico`
+- Adicionado `<link rel="apple-touch-icon">` para iOS (512px)
+- Gerada **OG image** (versão clara, off-white) via IA e salva em `public/og-image.jpg`
+- Gerado **favicon.ico** a partir da logo real da Camila (silhueta + coração azul) via script `sharp`
+- Gerado **favicon-512.png** para Apple Touch Icon
+- Script criado: `scripts/gen-favicon.mjs`
+
+**3. Sitemap XML**
+- Criado `public/sitemap.xml` com 6 URLs (página principal + 5 seções âncora)
+- Submetido no **Google Search Console** — processado com sucesso (6 páginas encontradas)
+
+**4. Otimização de Performance (Score 67 → 89)**
+- Criado script `scripts/convert-images.mjs` com `sharp`
+- Todas as imagens convertidas para **WebP** com reduções massivas:
+  - `img3.JPG` 6.468KB → 48KB WebP (-99%)
+  - `img4.JPG` 5.876KB → 37KB WebP (-99%)
+  - `img5.JPG` 5.230KB → 32KB WebP (-99%)
+  - `camila.jpeg` 170KB → 53KB WebP (-69%)
+  - `logo horizontal.png` 134KB → 8KB WebP (-94%)
+- Corrigido `Hero.jsx`: `fetchpriority="high"`, `width`, `height`, `decoding="async"`, src → `.webp`
+- Corrigido `About.jsx`: `loading="lazy"`, `width`, `height`, `decoding="async"`, src → `.webp`
+- Corrigido `Header.jsx`: `width`, `height`, `fetchpriority="high"`, ambas as logos → `.webp`
+- **Score PageSpeed mobile: 67 → 89** | SEO: 100 | Melhores Práticas: 100
+
+**5. CDN Cloudflare configurado**
+- Conta Cloudflare criada, domínio `camilaconceicaopsi.com.br` adicionado
+- DNS importado e revisado — registros de email (MX, DKIM, SPF, DMARC) configurados como DNS only
+- Registros `clarezaeequilibrio` A e AAAA adicionados manualmente (não foram importados automaticamente)
+- Nameservers trocados na Hostinger: `jill.ns.cloudflare.com` / `rex.ns.cloudflare.com`
+- Propagação DNS em andamento (1–4h) — site instável temporariamente durante transição
+
+### Arquivos Modificados
+- `index.html` — SEO completo, OG, Twitter/X, favicon
+- `public/favicon.ico` — gerado da logo da Camila
+- `public/favicon-512.png` — versão 512px para iOS
+- `public/og-image.jpg` — OG image clara
+- `public/sitemap.xml` — sitemap para o Google
+- `public/img/*.webp` — 7 imagens convertidas para WebP
+- `src/components/Hero.jsx` — WebP + fetchpriority + dimensões
+- `src/components/About.jsx` — WebP + lazy loading + dimensões
+- `src/components/Header.jsx` — WebP + dimensões
+- `scripts/gen-favicon.mjs` — geração do favicon
+- `scripts/convert-images.mjs` — conversão de imagens para WebP
+
+### Commits
+- `4e35901` — feat(seo): title, metatags ACT, OG image clara, favicon logo, apple-touch-icon
+- `713d82f` — feat(seo): adiciona sitemap.xml com pagina principal e secoes ancora
+- `60d79fb` — perf: converte imagens para WebP, fix width/height/lazy/fetchpriority nas imgs
+
+---
+
 ## 📅 2026-02-28 — Sessão de Manutenção e Evolução do Form
 
 ### Ações Realizadas

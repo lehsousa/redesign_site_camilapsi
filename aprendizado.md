@@ -2,6 +2,43 @@
 
 ---
 
+## 📅 2026-03-01 — SEO, Performance e CDN
+
+### WebP vs JPG: conversão com sharp
+- `sharp` (Node.js) converte JPGs de 6MB para WebPs de 48KB (-99%) sem perda de qualidade perceptível
+- Usar `quality: 82` para fotos, `quality: 90` para logos/gráficos
+- Roda como script ESM com `node scripts/convert-images.mjs`
+
+### fetchpriority="high" para LCP
+- A imagem do Hero é o LCP (Largest Contentful Paint) — adicionar `fetchpriority="high"` instrui o browser a baixá-la antes de outros recursos
+- Combinado com WebP, o LCP caiu de 5.3s para 3.1s
+
+### loading="lazy" não serve para Hero
+- `loading="lazy"` deve ser usado APENAS em imagens abaixo do fold (seções que não aparecem na tela inicial)
+- Nunca usar `loading="lazy"` na imagem principal do Hero — isso atrasa propositalmente o LCP
+
+### width e height em `<img>` evitam CLS
+- Sem `width` e `height` explícitos, o browser não sabe o tamanho da imagem antes de carregá-la → gera Cumulative Layout Shift (CLS)
+- Basta colocar as dimensões reais da imagem original — CSS controla o tamanho visual
+
+### Migração DNS para Cloudflare com email preservado
+- MX, SPF, DKIM, DMARC → sempre **DNS only** (nuvem cinza) no Cloudflare
+- Autoconfig e autodiscover → **DNS only** também
+- A e AAAA do site → **Proxied** (nuvem laranja)
+- Cloudflare importa automaticamente os registros mas **pode deixar DKIM como Proxied** — verificar sempre
+
+### Domínio .com.br via Hostinger (HSTDOMAINS)
+- Se o domínio .com.br foi registrado pela Hostinger, o Registro.br mostra "Provedor: HSTDOMAINS" e não permite editar DNS diretamente
+- Nameservers devem ser trocados no painel da **Hostinger** → Domínios → Nameservers
+- Subdomínios específicos (ex: `clarezaeequilibrio`) podem não ser importados automaticamente pelo Cloudflare — verificar e adicionar manualmente
+
+### Google Search Console — sitemap.xml
+- O sitemap precisa ser um arquivo físico acessível via URL — não pode ser só uma referência no HTML
+- Deve estar em `/sitemap.xml` na raiz do servidor
+- Para single-page app, incluir URLs com âncoras (`/#about`) junto com a raiz
+
+---
+
 ## 🔴 Anti-padrões Identificados e Corrigidos
 
 ### 1. ID de seção divergente do link de navegação
